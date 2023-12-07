@@ -1,0 +1,190 @@
+<!-- views/index.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Bienvenido a Netflix</title>
+  
+  <style>
+    body {
+      background-color: #12a86f;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      color: #fff;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: #5d07fd;
+    }
+
+    table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+
+    table, th, td {
+      border: 1px solid #fff;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background-color: rgb(9, 20, 119)808;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: rgb(5, 3, 99);
+    }
+
+    .update-btn, .delete-btn {
+      background-color: #195e7e;
+      color: #fff;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      margin-right: 5px;
+      text-decoration: none;
+    }
+
+    .delete-btn {
+      background-color: #07edfd;
+    }
+ 
+  </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenido a Netflix</h1>
+        <img src="/icons/O5F.gif" class="w-10">
+     
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Género</th>
+          <th>Duración</th>
+          <th>Director</th>
+          <th>Protagonista</th>
+          <th>Antagonista</th>
+          <th>Descripción</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% movies.forEach(movie => { %>
+          <tr>
+            <td><%= movie.titulo %></td>
+            <td><%= movie.genero %></td>
+            <td><%= movie.duracion %></td>
+            <td><%= movie.director %></td>
+            <td><%= movie.protagonista %></td>
+            <td><%= movie.antagonista %></td>
+            <td><%= movie.descripcion %></td>
+            <td>
+              <a href="/delete/<%= movie._id %>" class="delete-btn">Eliminar</a>
+               </td>
+              
+             </tr>
+      
+              
+           <% }); %>
+         </tbody>
+         
+       </table>
+       
+     </div>
+   </body>
+   </html>
+
+   
+   <!DOCTYPE html>
+   <html>
+   <head>
+   <style>
+   .button {
+     display: inline-block;
+     border-radius: 4px;
+     background-color: #451ef4;
+     border: none;
+     color: #FFFFFF;
+     text-align: center;
+     font-size: 18px;
+     padding: 10px;
+     width: 200px;
+     transition: all 0.5s;
+     cursor: pointer;
+     margin: 5px;
+   }
+   
+   .button span {
+     cursor: pointer;
+     display: inline-block;
+     position: relative;
+     transition: 0.5s;
+   }
+   
+   .button span:after {
+     content: '\00bb';
+     position: absolute;
+     opacity: 0;
+     top: 0;
+     right: -20px;
+     transition: 0.5s;
+   }
+   
+   .button:hover span {
+     padding-right: 25px;
+   }
+   
+   .button:hover span:after {
+     opacity: 1;
+     right: 0;
+   }
+   </style>
+   </head>
+   <body>
+   
+
+   
+   <button class="button" style="vertical-align:middle"><span>Saludos</span></button>
+   
+   </body>
+   </html>
+   
+
+   <a href="/form" class="button">Registrar</a>
+   <a href="/update" class="button">Actualizar</a>
+
+
+ 
+   
+
+ </div>
+</body>
+</html>
+
+
+
+    
+
+
+
+
